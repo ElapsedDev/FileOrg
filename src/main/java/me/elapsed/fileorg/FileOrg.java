@@ -27,15 +27,9 @@ public class FileOrg extends TimerTask {
 
     public void init() {
 
-        System.out.println("──────────────────────────────────────────────────────");
+        System.out.println("_______________________________________");
 
-        System.out.println("" +
-                "███████╗██╗██╗     ███████╗ ██████╗ ██████╗  ██████╗ \n" +
-                "██╔════╝██║██║     ██╔════╝██╔═══██╗██╔══██╗██╔════╝ \n" +
-                "█████╗  ██║██║     █████╗  ██║   ██║██████╔╝██║  ███╗\n" +
-                "██╔══╝  ██║██║     ██╔══╝  ██║   ██║██╔══██╗██║   ██║\n" +
-                "██║     ██║███████╗███████╗╚██████╔╝██║  ██║╚██████╔╝\n" +
-                "╚═╝     ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ");
+        System.out.println("FileOrg");
 
         instance = this;
 
@@ -50,6 +44,10 @@ public class FileOrg extends TimerTask {
         this.extensions.put("jar", "Jars");
         this.extensions.put("jpg", "Photos");
         this.extensions.put("png", "Photos");
+        this.extensions.put("pdf", "PDF Files");
+        this.extensions.put("mp4", "Videos");
+        this.extensions.put("webp", "WEBPs");
+        this.extensions.put("gif", "GIFS");
 
         // Init the Timer
         this.timerTask = new Timer();
@@ -57,7 +55,7 @@ public class FileOrg extends TimerTask {
         // Init the Scheduled Timer
         this.timerTask.scheduleAtFixedRate(this, 1000 * 5, 1000 * 5);
 
-        System.out.println("──────────────────────────────────────────────────────");
+        System.out.println("_______________________________________");
 
         setup();
     }
@@ -106,6 +104,7 @@ public class FileOrg extends TimerTask {
         }
 
         System.out.println("We have moved " + counter + " files to their specific folders!");
+        System.exit(0);
     }
 
     public String getFileExtension(String file) {
